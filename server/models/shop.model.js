@@ -15,9 +15,11 @@ const ShopSchema = new mongoose.Schema({
   },
   number_of_sales: {
     type: Number,
+    default: 5,
   },
   is_a_weak_seller: {
     type: Boolean,
+    default: true,
   },
   updated: Date,
   created: {
