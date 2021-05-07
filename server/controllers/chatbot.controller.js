@@ -1,11 +1,11 @@
 import extend from "lodash/extend";
 import errorHandler from "./../helpers/dbErrorHandler";
 import config from "./../../config/config";
-// import dotEnv from "dotenv";
+import dotEnv from "dotenv";
 
-// let env = dotEnv.config();
+let env = dotEnv.config();
 
-const postWebhooK = () => {
+const postWebhook = (req, res) => {
   let body = req.body;
 
   // Checks this is an event from a page subscription
@@ -25,9 +25,9 @@ const postWebhooK = () => {
     res.sendStatus(404);
   }
 };
-const getWebhooK = () => {
-  console.log("AAAAAAAAA", process.env.VERIFY_TOKEN);
-  let VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+const getWebhook = (req, res) => {
+  console.log("AAAAAAAAA", process.env.MY_VERIFY_TOKEN);
+  let VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
 
   // Parse the query params
   let mode = req.query["hub.mode"];
@@ -49,6 +49,6 @@ const getWebhooK = () => {
 };
 
 export default {
-  postWebhooK,
-  getWebhooK,
+  postWebhook,
+  getWebhook,
 };
