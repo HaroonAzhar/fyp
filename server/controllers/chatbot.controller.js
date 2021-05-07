@@ -1,9 +1,9 @@
 import extend from "lodash/extend";
 import errorHandler from "./../helpers/dbErrorHandler";
 import config from "./../../config/config";
-import dotEnv from "dotenv";
+// import dotEnv from "dotenv";
 
-let env = dotEnv.config();
+// let env = dotEnv.config();
 
 const postWebhooK = () => {
   let body = req.body;
