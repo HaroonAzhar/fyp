@@ -48,24 +48,29 @@ const PlaceOrder = (props) => {
   });
 
   const placeOrder = () => {
-    //   props.stripe.createToken().then(payload => {
-    //     if(payload.error){
-    //       setValues({...values, error: payload.error.message})
-    //     }else{
-    //       const jwt = auth.isAuthenticated()
-    //       create({userId:jwt.user._id}, {
-    //         t: jwt.token
-    //       }, props.checkoutDetails, payload.token.id).then((data) => {
-    //         if (data.error) {
-    //           setValues({...values, error: data.error})
-    //         } else {
-    //           cart.emptyCart(()=> {
-    //             setValues({...values, 'orderId':data._id,'redirect': true})
-    //           })
-    //         }
-    //       })
-    //     }
-    // })
+    // props.stripe.createToken().then((payload) => {
+    //   if (payload.error) {
+    //     setValues({ ...values, error: payload.error.message });
+    //   } else {
+    //     const jwt = auth.isAuthenticated();
+    //     create(
+    //       { userId: jwt.user._id },
+    //       {
+    //         t: jwt.token,
+    //       },
+    //       props.checkoutDetails,
+    //       payload.token.id
+    //     ).then((data) => {
+    //       if (data.error) {
+    //         setValues({ ...values, error: data.error });
+    //       } else {
+    //         cart.emptyCart(() => {
+    //           setValues({ ...values, orderId: data._id, redirect: true });
+    //         });
+    //       }
+    //     });
+    //   }
+    // });
 
     const jwt = auth.isAuthenticated();
     create(

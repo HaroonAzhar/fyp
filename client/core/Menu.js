@@ -23,7 +23,7 @@ const Menu = withRouter(({ history }) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="h6" color="inherit">
-        Booksy
+        A&S Central
       </Typography>
       <div>
         <Link to="/">
