@@ -22,8 +22,43 @@ export default function Cart() {
   };
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={8}>
+    <div class="container">
+      <section class="py-5">
+        <h2 class="h5 text-uppercase mb-4">Shopping cart</h2>
+        <div class="row">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="table-responsive mb-4">
+              <table class="table">
+                <thead class="bg-light">
+                  <tr>
+                    <th class="border-0" scope="col">
+                      {" "}
+                      <strong class="text-small text-uppercase">Product</strong>
+                    </th>
+                    <th class="border-0" scope="col">
+                      {" "}
+                      <strong class="text-small text-uppercase">Price</strong>
+                    </th>
+                    <th class="border-0" scope="col">
+                      {" "}
+                      <strong class="text-small text-uppercase">
+                        Quantity
+                      </strong>
+                    </th>
+                    <th class="border-0" scope="col">
+                      {" "}
+                      <strong class="text-small text-uppercase">Total</strong>
+                    </th>
+                    <th class="border-0" scope="col">
+                      {" "}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <CartItems checkout={checkout} setCheckout={showCheckout} />
+                </tbody>
+              </table>
+              {/* <Grid container spacing={8}>
         <Grid item xs={6} sm={6}>
           <CartItems checkout={checkout} setCheckout={showCheckout} />
         </Grid>
@@ -34,7 +69,22 @@ export default function Cart() {
             </StripeProvider>
           </Grid>
         )}
-      </Grid>
+      </Grid> */}
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card border-0 rounded-0  bg-light">
+              <div class="card-body">
+                {checkout && (
+                  <StripeProvider apiKey={config.stripe_test_api_key}>
+                    <Checkout />
+                  </StripeProvider>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

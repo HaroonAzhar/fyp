@@ -3,7 +3,9 @@ import errorHandler from "./../helpers/dbErrorHandler";
 
 const create = async (req, res) => {
   console.log("req.profile", req.body.order.user);
-  console.log("order", req.body.order);
+  // console.log("order", req.body);
+  console.log("body is");
+  console.log(req.body);
 
   try {
     req.body.order.user = req.profile;

@@ -23,7 +23,7 @@
     "start": "NODE_ENV=production node ./dist/server.generated.js"
   },
   "engines": {
-    "node": "13.12.0",
+    "node": "10.13.0",
     "npm": "6.14.4"
   },
   "devDependencies": {
@@ -37,7 +37,9 @@
     "webpack-cli": "3.3.11",
     "webpack-dev-middleware": "3.7.2",
     "webpack-hot-middleware": "2.25.0",
-    "webpack-node-externals": "1.7.2"
+    "css-loader": "^5.2.5",
+    "webpack-node-externals": "1.7.2",
+    "style-loader": "^2.0.0"
   },
   "dependencies": {
     "@hot-loader/react-dom": "16.13.0",
